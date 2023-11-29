@@ -1,0 +1,27 @@
+// SCREEN BREAKPOINTS
+
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+// FONTS
+
+@font-face{
+    font-family: "Avenir";
+    src:url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("Bold.otf");
+    src:url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("Demi.otf");
+    src:url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("Regular.otf");
+
+}
+
+*{
+    font-family: "Avenir";
+}
+
+// COLORS
+
+$bsb-primarytextcolor: #323232;
+$silver-primarytextcolor: #afafaf;
+$white-primarytextcolor: #ffffff;
+$bsdb-secondarycolor: #000000;
+$mercury-secondarycolor: #e1e1e1;
+$alabaster-secondarycolor:#fafafa;

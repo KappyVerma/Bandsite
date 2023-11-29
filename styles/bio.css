@@ -1,1 +1,9 @@
-/*# sourceMappingURL=bio.css.map */
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("Bold.otf");
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("Demi.otf");
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("Regular.otf");
+}
+* {
+  font-family: "Avenir";
+}/*# sourceMappingURL=bio.css.map */
