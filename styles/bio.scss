@@ -1,3 +1,231 @@
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
 
+// -------------------NAV--------------------
+
+.nav {
+  background-color: $bsb-primarytextcolor;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include tablet {
+    flex-wrap: nowrap;
+    justify-content: start;
+  }
+  @include desktop {
+    flex-wrap: nowrap;
+    justify-content: start;
+  }
+
+  &__logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.3em 0 0.8em;
+    &--container {
+      background-image: url("../assets/Logo/Logo-bandsite.svg");
+      width: 7.5rem;
+      height: 1.25rem;
+      background-repeat: no-repeat;
+    }
+    @include tablet {
+      width: auto;
+      margin: 0 1.5em 0 1.5em;
+      padding: 1.5em 0;
+    }
+    @include desktop {
+      width: auto;
+      margin: 0 1.5em 0 6em;
+      padding: 1.5em 0;
+    }
+  }
+  &__item {
+    width: 50%;
+    text-align: center;
+    padding-bottom: 0.6em;
+    border-bottom: 4px solid transparent;
+    &:active {
+      border-color: $white-primarytextcolor;
+    }
+    &:hover {
+      border-color: $white-primarytextcolor;
+    }
+    &--link {
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: $mercury-secondarycolor;
+
+      &:active {
+        color: $white-primarytextcolor;
+        font-weight: 700;
+      }
+    }
+    @include tablet {
+      width: auto;
+      margin: 0 1.5em;
+      padding: 1.5em 0;
+    }
+    @include desktop {
+      width: auto;
+      margin: 0 1.5em;
+      padding: 1.9em 0;
+    }
+  }
+}
+
+// -------------------HERO--------------------
+.hero {
+  background-image: url("../assets/Images/hero-bio.jpg");
+  width: auto;
+  height: 40vh;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $bsb-primarytextcolor;
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  @include tablet {
+    height: 90vh;
+  }
+  @include desktop {
+    height: 90vh;
+  }
+  &__title {
+    color: $white-primarytextcolor;
+    margin-left: 1em;
+    z-index: 2;
+
+    @include tablet {
+      font-size: 3.75rem;
+      font-weight: bold;
+      margin-left: 1em;
+    }
+    @include desktop {
+      font-size: 3.75rem;
+      font-weight: bold;
+      margin-left: 2.5em;
+    }
+  }
+}
+
+// -------------------ABOUT--------------------
+
+.about {
+  padding: 1.5em 1em;
+  @include tablet {
+    padding: 3em 2.25em;
+  }
+  @include desktop {
+    padding: 3em 2.25em;
+  }
+
+  &__title {
+    font-weight: 700;
+    line-height: 2em;
+    @include tablet {
+      font-size: 2.25rem;
+      line-height: 2.25rem;
+    }
+    @include desktop {
+      font-size: 2.25rem;
+      line-height: 2.25rem;
+      margin-left: 3em;
+    }
+  }
+
+  &-block {
+    width: 100%;
+    @include tablet {
+      width: 85%;
+      margin: 0 auto;
+      padding: 0.8em 0;
+    }
+    @include desktop {
+      width: 70%;
+      margin: 0 auto;
+      padding: 1.5em 0;
+    }
+    &__image {
+      background-image: url("../assets/Images/band.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 70vh;
+      margin: 1em 0;
+
+      @include tablet {
+        height: 50vh;
+      }
+
+      @include desktop {
+        height: 65vh;
+      }
+    }
+    &__text {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.6rem;
+      &--lg {
+        padding-bottom: 0.5em;
+
+        @include tablet {
+          font-size: 1.5rem;
+          line-height: 2rem;
+          padding-top: 1em;
+        }
+        @include desktop {
+          font-size: 1.5rem;
+          line-height: 2rem;
+          width: 78%;
+          padding-top: 1em;
+        }
+      }
+    }
+  }
+}
+
+.article {
+  width: 100%;
+  margin: 1.5em auto 0;
+  @include tablet {
+    margin: 3em auto 0;
+  }
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    @include tablet {
+      font-size: 1.5rem;
+    }
+  }
+  &__block {
+    padding: 1.2em 0;
+    @include tablet {
+      display: flex;
+    }
+  }
+  &__text {
+    margin-bottom: 1em;
+    line-height: 1.5rem;
+    &--pd {
+      @include tablet {
+        margin-right: 1.5em;
+      }
+    }
+  }
+}

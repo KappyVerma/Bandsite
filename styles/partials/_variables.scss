@@ -1,3 +1,5 @@
+
+
 // SCREEN BREAKPOINTS
 
 $tablet-breakpoint: 768px;
@@ -15,7 +17,14 @@ $desktop-breakpoint: 1280px;
 
 *{
     font-family: "Avenir";
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
+body{
+    min-width: 320px;
+}
+
 
 // COLORS
 
