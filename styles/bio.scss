@@ -1,8 +1,16 @@
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
 
+* {
+  font-family: "Avenir";
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  min-width: 320px;
+}
 // -------------------NAV--------------------
-
 .nav {
   background-color: $bsb-primarytextcolor;
   display: flex;
@@ -10,10 +18,6 @@
   justify-content: center;
 
   @include tablet {
-    flex-wrap: nowrap;
-    justify-content: start;
-  }
-  @include desktop {
     flex-wrap: nowrap;
     justify-content: start;
   }
@@ -32,13 +36,11 @@
     }
     @include tablet {
       width: auto;
-      margin: 0 1.5em 0 1.5em;
+      margin: 0 1.5em 0 3em;
       padding: 1.5em 0;
     }
     @include desktop {
-      width: auto;
-      margin: 0 1.5em 0 6em;
-      padding: 1.5em 0;
+      margin-left: 7.5em;
     }
   }
   &__item {
@@ -68,13 +70,10 @@
       padding: 1.5em 0;
     }
     @include desktop {
-      width: auto;
-      margin: 0 1.5em;
       padding: 1.9em 0;
     }
   }
 }
-
 // -------------------HERO--------------------
 .hero {
   background-image: url("../assets/Images/hero-bio.jpg");
@@ -102,9 +101,7 @@
   @include tablet {
     height: 90vh;
   }
-  @include desktop {
-    height: 90vh;
-  }
+
   &__title {
     color: $white-primarytextcolor;
     margin-left: 1em;
@@ -113,37 +110,29 @@
     @include tablet {
       font-size: 3.75rem;
       font-weight: bold;
-      margin-left: 1em;
+      margin-left: 0.8em;
     }
     @include desktop {
-      font-size: 3.75rem;
-      font-weight: bold;
-      margin-left: 2.5em;
+      margin-left: 2em;
     }
   }
 }
-
 // -------------------ABOUT--------------------
-
 .about {
   padding: 1.5em 1em;
   @include tablet {
-    padding: 3em 2.25em;
-  }
-  @include desktop {
     padding: 3em 2.25em;
   }
 
   &__title {
     font-weight: 700;
     line-height: 2em;
+
     @include tablet {
       font-size: 2.25rem;
       line-height: 2.25rem;
     }
     @include desktop {
-      font-size: 2.25rem;
-      line-height: 2.25rem;
       margin-left: 3em;
     }
   }
@@ -157,7 +146,6 @@
     }
     @include desktop {
       width: 70%;
-      margin: 0 auto;
       padding: 1.5em 0;
     }
     &__image {
@@ -166,7 +154,7 @@
       background-size: cover;
       background-repeat: no-repeat;
       width: 100%;
-      height: 70vh;
+      height: 50vh;
       margin: 1em 0;
 
       @include tablet {
@@ -190,10 +178,7 @@
           padding-top: 1em;
         }
         @include desktop {
-          font-size: 1.5rem;
-          line-height: 2rem;
           width: 78%;
-          padding-top: 1em;
         }
       }
     }
