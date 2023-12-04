@@ -49,7 +49,7 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .navigation__logo {
-    margin-left: 7.5em;
+    margin-left: 9em;
   }
 }
 .navigation__item {
@@ -133,7 +133,7 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .hero__title {
-    margin-left: 2em;
+    margin-left: 2.4em;
   }
 }
 

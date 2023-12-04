@@ -40,7 +40,7 @@ body {
       padding: 1.5em 0;
     }
     @include desktop {
-      margin-left: 7.5em;
+      margin-left: 9em;
     }
   }
   &__item {
@@ -115,7 +115,7 @@ body {
       @include d-header;
     }
     @include desktop {
-      margin-left: 2em;
+      margin-left: 2.4em;
     }
   }
 }
