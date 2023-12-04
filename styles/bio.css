@@ -15,84 +15,73 @@ body {
   min-width: 320px;
 }
 
-* {
-  font-family: "Avenir";
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  min-width: 320px;
-}
-
-.nav {
+.navigation {
   background-color: #323232;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 @media screen and (min-width: 768px) {
-  .nav {
+  .navigation {
     flex-wrap: nowrap;
     justify-content: start;
   }
 }
-.nav__logo {
+.navigation__logo {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1.3em 0 0.8em;
 }
-.nav__logo--container {
+.navigation__logo .logo__container {
   background-image: url("../assets/Logo/Logo-bandsite.svg");
   width: 7.5rem;
   height: 1.25rem;
   background-repeat: no-repeat;
 }
 @media screen and (min-width: 768px) {
-  .nav__logo {
+  .navigation__logo {
     width: auto;
     margin: 0 1.5em 0 3em;
     padding: 1.5em 0;
   }
 }
 @media screen and (min-width: 1280px) {
-  .nav__logo {
+  .navigation__logo {
     margin-left: 7.5em;
   }
 }
-.nav__item {
+.navigation__item {
   width: 50%;
   text-align: center;
   padding-bottom: 0.6em;
   border-bottom: 4px solid transparent;
 }
-.nav__item:active {
+.navigation__item:active {
   border-color: #ffffff;
 }
-.nav__item:hover {
+.navigation__item:hover {
   border-color: #ffffff;
 }
-.nav__item--link {
+.navigation__item .item__link {
   font-size: 0.9rem;
   text-decoration: none;
   color: #e1e1e1;
 }
-.nav__item--link:active {
+.navigation__item .item__link:active {
   color: #ffffff;
   font-weight: 700;
 }
 @media screen and (min-width: 768px) {
-  .nav__item {
+  .navigation__item {
     width: auto;
     margin: 0 1.5em;
     padding: 1.5em 0;
   }
 }
 @media screen and (min-width: 1280px) {
-  .nav__item {
+  .navigation__item {
     padding: 1.9em 0;
   }
 }
@@ -121,19 +110,25 @@ body {
 }
 @media screen and (min-width: 768px) {
   .hero {
-    height: 90vh;
+    height: 85vh;
   }
 }
 .hero__title {
   color: #ffffff;
   margin-left: 1em;
   z-index: 2;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
 }
 @media screen and (min-width: 768px) {
   .hero__title {
     font-size: 3.75rem;
     font-weight: bold;
     margin-left: 0.8em;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    font-weight: 700;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -142,117 +137,311 @@ body {
   }
 }
 
-.about {
-  padding: 1.5em 1em;
+.a-block {
+  padding: 1.5em 1em 0;
 }
 @media screen and (min-width: 768px) {
-  .about {
-    padding: 3em 2.25em;
+  .a-block {
+    padding: 3em 2.25em 0;
   }
 }
-.about__title {
+.a-block__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 700;
-  line-height: 2em;
 }
 @media screen and (min-width: 768px) {
-  .about__title {
+  .a-block__title {
     font-size: 2.25rem;
     line-height: 2.25rem;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
   }
 }
 @media screen and (min-width: 1280px) {
-  .about__title {
+  .a-block__title {
     margin-left: 3em;
   }
 }
-.about-block {
+.a-block .a-container {
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  .about-block {
+  .a-block .a-container {
     width: 85%;
     margin: 0 auto;
     padding: 0.8em 0;
   }
 }
 @media screen and (min-width: 1280px) {
-  .about-block {
+  .a-block .a-container {
     width: 70%;
     padding: 1.5em 0;
   }
 }
-.about-block__image {
+.a-block .a-container__image {
   background-image: url("../assets/Images/band.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
   height: 50vh;
-  margin: 1em 0;
+  margin: 1em 0 2.25em;
 }
 @media screen and (min-width: 768px) {
-  .about-block__image {
+  .a-block .a-container__image {
     height: 50vh;
   }
 }
 @media screen and (min-width: 1280px) {
-  .about-block__image {
+  .a-block .a-container__image {
     height: 65vh;
   }
 }
-.about-block__text {
-  font-size: 1rem;
+.a-block .a-container__text {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
   font-weight: 600;
-  line-height: 1.6rem;
 }
-.about-block__text--lg {
+.a-block .a-container__text--lg {
   padding-bottom: 0.5em;
 }
 @media screen and (min-width: 768px) {
-  .about-block__text--lg {
+  .a-block .a-container__text--lg {
     font-size: 1.5rem;
     line-height: 2rem;
-    padding-top: 1em;
+    font-weight: 600;
   }
 }
 @media screen and (min-width: 1280px) {
-  .about-block__text--lg {
+  .a-block .a-container__text--lg {
     width: 78%;
   }
 }
 
-.article {
+.b-block {
   width: 100%;
   margin: 1.5em auto 0;
 }
 @media screen and (min-width: 768px) {
-  .article {
+  .b-block {
     margin: 3em auto 0;
   }
 }
-.article__title {
-  font-size: 1rem;
+.b-block__title {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
   font-weight: 600;
 }
 @media screen and (min-width: 768px) {
-  .article__title {
+  .b-block__title {
     font-size: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
   }
 }
-.article__block {
-  padding: 1.2em 0;
+.b-block .b-container {
+  padding: 1.2em 0 0;
 }
 @media screen and (min-width: 768px) {
-  .article__block {
+  .b-block .b-container {
     display: flex;
+    justify-content: space-between;
   }
 }
-.article__text {
+.b-block .b-container__text {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
   margin-bottom: 1em;
-  line-height: 1.5rem;
 }
 @media screen and (min-width: 768px) {
-  .article__text--pd {
-    margin-right: 1.5em;
+  .b-block .b-container__text {
+    width: 48%;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+  }
+}
+
+.c-block {
+  background-color: #fafafa;
+  padding: 1.5em 1em 0.5em;
+}
+@media screen and (min-width: 768px) {
+  .c-block {
+    padding: 3em 2.25em 0;
+  }
+}
+.c-block__title {
+  font-weight: 700;
+  line-height: 2em;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .c-block__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    margin: 0.5em 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .c-block__title {
+    margin: 0 0 1em 3em;
+  }
+}
+.c-block .c-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) {
+  .c-block .c-container {
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .c-block .c-container {
+    width: 84%;
+    margin: auto;
+  }
+}
+.c-block .c-container__item {
+  width: 100%;
+  margin: 0.5em 0;
+}
+@media screen and (min-width: 768px) {
+  .c-block .c-container__item {
+    width: 32%;
+    margin: 0.5em 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .c-block .c-container__item {
+    margin: 0.7em 0;
+  }
+}
+
+.f-block {
+  background-color: #323232;
+  color: #ffffff;
+  padding: 1.5em 1em 0;
+}
+@media screen and (min-width: 768px) {
+  .f-block {
+    padding: 3em 2.25em 0;
+    position: relative;
+    margin-top: 1.5em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .f-block .first-container {
+    display: flex;
+    align-items: center;
+  }
+}
+.f-block .first-container__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .f-block .first-container__title {
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .f-block .first-container__title {
+    margin-left: 3em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .f-block .first-container__item {
+    margin-left: 2em;
+  }
+}
+.f-block .first-container__link {
+  padding-right: 1.5em;
+  margin: 1em 0;
+}
+.f-block .second-container {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .f-block .second-container {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5em;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .f-block .second-container {
+    width: 60%;
+    margin-left: 7.8em;
+  }
+}
+.f-block .second-container__list {
+  margin-bottom: 2em;
+}
+.f-block .second-container__item {
+  margin-bottom: 1.2em;
+}
+.f-block .second-container .item__text {
+  text-decoration: none;
+  color: #ffffff;
+}
+.f-block .second-container .item__text--bold {
+  font-weight: bold;
+}
+.f-block__logo {
+  background-image: url("../assets/Logo/Logo-bandsite.svg");
+  width: 7.5rem;
+  height: 1.25rem;
+  background-repeat: no-repeat;
+  margin: 5em 0 1.5em 0;
+}
+@media screen and (min-width: 768px) {
+  .f-block__logo {
+    position: absolute;
+    top: 4em;
+    right: 1.8em;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .f-block__logo {
+    right: 8.6em;
+  }
+}
+.f-block__text {
+  padding-bottom: 1.5em;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .f-block__text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    padding-bottom: 3em;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .f-block__text {
+    margin-left: 7.8em;
   }
 }/*# sourceMappingURL=bio.css.map */
