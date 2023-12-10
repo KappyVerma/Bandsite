@@ -34,32 +34,29 @@ const shows = [
 ];
 // --------------------SHOW-TITLE--------------------
 const showContainer = document.querySelector(".shows");
-const showTitle = document.createElement("h2");
-showTitle.innerText = "Shows";
-showTitle.classList.add("shows__title");
-showContainer.prepend(showTitle);
 
-const dateHeaderTd = document.createElement("p");
-dateHeaderTd.classList.add("shows__header-td");
-dateHeaderTd.innerText = "DATE";
+const showTitle = createElement("h2", "Shows", "shows__title");
 
-const venueHeaderTd = document.createElement("p");
-venueHeaderTd.classList.add("shows__header-td");
-venueHeaderTd.classList.add("shows__header--left");
-venueHeaderTd.innerText = "VENUE";
+const dateHeaderTd = createElement("p", "DATE", "shows__heading");
+const venueHeaderTd = createElement(
+  "p",
+  "VENUE",
+  "shows__heading",
+  "shows__heading--left"
+);
+const locationHeaderTd = createElement(
+  "p",
+  "LOCATION",
+  "shows__heading",
+  "shows__heading--right"
+);
 
-const locationHeaderTd = document.createElement("p");
-locationHeaderTd.classList.add("shows__header-td");
-locationHeaderTd.classList.add("shows__header--mod");
-locationHeaderTd.innerText = "LOCATION";
-
-const headerBlock = document.createElement("div");
-headerBlock.classList.add("shows__header-block");
+const headerBlock = createElement("div", "", "shows__block");
 
 headerBlock.prepend(locationHeaderTd);
 headerBlock.prepend(venueHeaderTd);
 headerBlock.prepend(dateHeaderTd);
-
+showContainer.prepend(showTitle);
 showContainer.append(headerBlock);
 
 // --------------------FUNCTION--------------------
@@ -69,52 +66,41 @@ const appendShowItem = function () {
     const showBlock = document.createElement("div");
     showBlock.classList.add("shows__list");
     // --------------------SUB CONTAINER--------------------
-    const firstItem = document.createElement("div");
-    firstItem.classList.add("shows__item");
 
-    const secondItem = document.createElement("div");
-    secondItem.classList.add("shows__item");
-    secondItem.classList.add("shows__item--mod");
-
-    const thirdItem = document.createElement("div");
-    thirdItem.classList.add("shows__item");
+    const firstItem = createElement("div", "", "shows__item");
+    const secondItem = createElement(
+      "div",
+      "",
+      "shows__item",
+      "shows__item--mod"
+    );
+    const thirdItem = createElement("div", "", "shows__item");
 
     //--------------------ELEMENT--------------------
 
-    const showDate = document.createElement("h4");
-    showDate.innerText = show.dates;
-    showDate.classList.add("shows__detail");
-    showDate.classList.add("shows__detail--mod");
-
-    const showVenue = document.createElement("p");
-    showVenue.classList.add("shows__detail");
-    showVenue.innerText = show.venue;
-
-    const showLocation = document.createElement("p");
-    showLocation.classList.add("shows__detail");
-    showLocation.classList.add("shows__detail--right");
-
-    showLocation.innerText = show.location;
-
-    const btn = document.createElement("button");
-    btn.classList.add("shows__button");
-    btn.innerText = "Buy Tickets";
+    const showDate = createElement(
+      "h4",
+      show.dates,
+      "shows__detail",
+      "shows__detail--mod"
+    );
+    const showVenue = createElement("p", show.venue, "shows__detail");
+    const showLocation = createElement(
+      "p",
+      show.location,
+      "shows__detail",
+      "shows__detail--right"
+    );
+    const btn = createElement("button", "buy tickets", "shows__button");
 
     //--------------------MOBILE HEADING--------------------
 
-    const dateHeader = document.createElement("p");
-    dateHeader.classList.add("shows__header");
-    dateHeader.innerText = "DATE";
-
-    const venueHeader = document.createElement("p");
-    venueHeader.classList.add("shows__header");
-    venueHeader.innerText = "VENUE";
-
-    const locationHeader = document.createElement("p");
-    locationHeader.classList.add("shows__header");
-    locationHeader.innerText = "LOCATION";
+    const dateHeader = createElement("p", "DATE", "shows__header");
+    const venueHeader = createElement("p", "VENUE", "shows__header");
+    const locationHeader = createElement("p", "LOCATION", "shows__header");
 
     //--------------------APPEND-ELEMENT--------------------
+
     firstItem.append(dateHeader);
     firstItem.append(showDate);
     secondItem.append(venueHeader);
@@ -131,3 +117,11 @@ const appendShowItem = function () {
   });
 };
 appendShowItem();
+
+function createElement(element, text, className, modifier) {
+  const newElement = document.createElement(element);
+  newElement.innerText = text;
+  newElement.classList.add(className);
+  newElement.classList.add(modifier);
+  return newElement;
+}

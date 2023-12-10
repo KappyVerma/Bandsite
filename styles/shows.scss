@@ -207,7 +207,6 @@ li {
 
     @include tablet {
       display: flex;
-      // justify-content: space-between;
       align-items: center;
       margin: 1.3em 0;
     }
@@ -291,45 +290,44 @@ li {
     color: $silver-primarytextcolor;
     @include tablet {
       display: none;
+    }
+  }
 
-      &-td {
-        @include tablet {
-          width: 25%;
-          font-size: 0.75rem;
-          font-weight: 700;
-        }
-      }
+  &__block {
+    display: none;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 1.8em;
+      width: 64.5%;
+      @include body-footer;
+      color: $silver-primarytextcolor;
+    }
+    @include desktop {
+      width: 45%;
+      position: absolute;
+      top: 80px;
+      right: 24.7%;
+      margin-left: auto;
+    }
+  }
 
-      &--left {
-        @include desktop {
-          width: 15%;
-          margin: 0 0em 0 0.2em;
-        }
-      }
-
-      &--mod {
-        @include desktop {
-          margin-right: 1.9em;
-        }
+  &__heading {
+    @include tablet {
+      width: 25%;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    &--left {
+      @include desktop {
+        width: 15%;
+        margin: 0 0em 0 0.2em;
       }
     }
 
-    &-block {
-      display: none;
-      @include tablet {
-        display: flex;
-        justify-content: space-between;
-        margin-left: 1.8em;
-        width: 64.5%;
-        @include body-footer;
-        color: $silver-primarytextcolor;
-      }
+    &--right {
       @include desktop {
-        width: 45%;
-        position: absolute;
-        top: 80px;
-        right: 24.7%;
-        margin-left: auto;
+        margin-right: 1.9em;
       }
     }
   }
