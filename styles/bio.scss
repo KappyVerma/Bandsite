@@ -302,6 +302,8 @@ body {
     height: 2.25em;
     border-radius: 50%;
     vertical-align: middle;
+    object-fit: cover;
+    object-position: center;
     margin-top: 1.6em;
     @include tablet {
       width: 3em;
