@@ -1,4 +1,4 @@
-const shows = [
+let showData = [
   {
     dates: "Mon Sept 06 2021",
     venue: "Ronald Lane",
@@ -19,19 +19,18 @@ const shows = [
     venue: "Hyatt Agency",
     location: "San Francisco, CA",
   },
-
   {
     dates: "Fri Nov 26 2021",
     venue: "Moscow Center",
     location: "San Francisco, CA",
   },
-
   {
     dates: "Wed Dec 15 2021 ",
     venue: "Press Club ",
     location: "San Francisco, CA",
   },
 ];
+
 // --------------------SHOW-TITLE--------------------
 const showContainer = document.querySelector(".shows");
 
@@ -61,7 +60,7 @@ showContainer.append(headerBlock);
 
 // --------------------FUNCTION--------------------
 const appendShowItem = function () {
-  shows.forEach(function (show) {
+  showData.forEach(function (show) {
     // --------------------MAIN CONTAINER--------------------
     const showBlock = document.createElement("div");
     showBlock.classList.add("shows__list");
@@ -116,6 +115,7 @@ const appendShowItem = function () {
     showContainer.append(showBlock);
   });
 };
+
 appendShowItem();
 
 function createElement(element, text, className, modifier) {
