@@ -1,24 +1,11 @@
-const comments = [
-  {
-    name: "Connor Walton",
-    dateStamp: "02/17/2021",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Emilie Beach",
-    dateStamp: "01/09/2021",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
+import BandSiteApi from "./band-site-api.js";
 
-  {
-    name: "Miles Acosta",
-    dateStamp: "12/20/2020",
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
+function createElement(element, text, className) {
+  const newElement = document.createElement(element);
+  newElement.innerText = text;
+  newElement.classList.add(className);
+  return newElement;
+}
 
 const commentSection = document.querySelector(".comments");
 const commentTitle = createElement(
@@ -57,19 +44,26 @@ function time(date) {
   return `${Math.floor(seconds)} seconds ago`;
 }
 
-function appendCommentItems() {
+const bandSiteApi = new BandSiteApi("d23b5fb9-2c95-4a20-8aee-f288b9976d56");
+
+async function gettingComments() {
+  const response = await bandSiteApi.getComments();
+  appendCommentItems(response);
+}
+gettingComments();
+
+function appendCommentItems(response) {
   commentList.innerText = "";
 
-  comments.sort(function (a, b) {
-    const dateA = new Date(a.dateStamp);
-    const dateB = new Date(b.dateStamp);
+  response.sort(function (a, b) {
+    const dateA = new Date(a.timestamp);
+    const dateB = new Date(b.timestamp);
     return dateB - dateA;
   });
 
-  comments.forEach(function (cmt) {
+  response.forEach(function (cmt) {
     const content = createElement("div", "", "comments__content");
     const imgContainer = createElement("div", "", "comments__img");
-    console.log(imgContainer);
 
     const commentItem = document.createElement("div");
     commentItem.classList.add("comments__item");
@@ -77,7 +71,7 @@ function appendCommentItems() {
     const userName = createElement("h4", cmt.name, "comments__user");
     const cmtDate = createElement(
       "p",
-      time(new Date(cmt.dateStamp)),
+      time(new Date(cmt.timestamp)),
       "comments__date"
     );
     const cmtText = createElement("p", cmt.comment, "comments__text");
@@ -91,14 +85,8 @@ function appendCommentItems() {
   });
 }
 
-commentForm.addEventListener("submit", function (event) {
+commentForm.addEventListener("submit", async function (event) {
   event.preventDefault();
-
-  const newComment = {
-    name: event.target.userName.value,
-    dateStamp: new Date(),
-    comment: event.target.userComment.value,
-  };
 
   if (!event.target.userName.value) {
     event.target.userName.style.border = "1px solid #d22d2d";
@@ -107,7 +95,11 @@ commentForm.addEventListener("submit", function (event) {
     event.target.userComment.style.border = "1px solid #d22d2d";
     return;
   }
-  comments.push(newComment);
+
+  const postResponse = await bandSiteApi.postComment({
+    name: event.target.userName.value,
+    comment: event.target.userComment.value,
+  });
 
   event.target.userName.value = "";
   event.target.userName.style.border = "1px solid #e1e1e1";
@@ -115,13 +107,5 @@ commentForm.addEventListener("submit", function (event) {
   event.target.userComment.value = "";
   event.target.userComment.style.border = "1px solid #e1e1e1";
 
-  appendCommentItems();
+  gettingComments();
 });
-appendCommentItems();
-
-function createElement(element, text, className) {
-  const newElement = document.createElement(element);
-  newElement.innerText = text;
-  newElement.classList.add(className);
-  return newElement;
-}
