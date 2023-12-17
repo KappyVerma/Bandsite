@@ -1,5 +1,6 @@
 import BandSiteApi from "./band-site-api.js";
 
+// --------------------FUNCTION--------------------
 function createElement(element, text, className) {
   const newElement = document.createElement(element);
   newElement.innerText = text;
@@ -7,6 +8,7 @@ function createElement(element, text, className) {
   return newElement;
 }
 
+// --------------------SHOW BLOCK TITLE--------------------
 const commentSection = document.querySelector(".comments");
 const commentTitle = createElement(
   "h2",
@@ -15,8 +17,12 @@ const commentTitle = createElement(
 );
 commentSection.prepend(commentTitle);
 
+// --------------------FORM AND COMMENTLIST--------------------
+
 const commentForm = document.querySelector(".comments__form");
 const commentList = document.querySelector(".comments__list");
+
+// --------------------TIME FUNCTION--------------------
 
 function time(date) {
   const seconds = Math.floor((new Date() - date) / 1000);
@@ -44,6 +50,8 @@ function time(date) {
   return `${Math.floor(seconds)} seconds ago`;
 }
 
+// --------------------FUNCTION TO GET DATA--------------------
+
 const bandSiteApi = new BandSiteApi("d23b5fb9-2c95-4a20-8aee-f288b9976d56");
 
 async function gettingComments() {
@@ -51,6 +59,8 @@ async function gettingComments() {
   appendCommentItems(response);
 }
 gettingComments();
+
+// --------------------LOOPING DATA AND APPENDIG ELEMENTS--------------------
 
 function appendCommentItems(response) {
   commentList.innerText = "";
@@ -84,6 +94,8 @@ function appendCommentItems(response) {
     commentList.appendChild(content);
   });
 }
+
+// --------------------FUNCTION TO POST DATA--------------------
 
 commentForm.addEventListener("submit", async function (event) {
   event.preventDefault();

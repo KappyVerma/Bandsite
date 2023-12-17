@@ -220,6 +220,11 @@ body {
     height: 50vh;
   }
 }
+@media screen and (min-width: 1000px) {
+  .a-block .a-container__image {
+    height: 60vh;
+  }
+}
 @media screen and (min-width: 1280px) {
   .a-block .a-container__image {
     height: 65vh;
